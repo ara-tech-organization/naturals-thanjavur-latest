@@ -128,7 +128,7 @@ const services = [
           property="og:description"
           content="Discover luxurious beauty and bridal services at Naturals Arulanthar Nagar. Trusted by 10,000+ happy clients in Thanjavur."
         />
-        <meta property="og:image" content="https://example.com/og-image.jpg" />
+        <meta property="og:image" content="https://naturalsthanjavur.com/images/bridal.jpeg" />
         <meta property="og:url" content="https://naturals-thanjavur.in/" />
         <meta property="og:type" content="website" />
 
@@ -139,7 +139,7 @@ const services = [
           name="twitter:description"
           content="Premium salon in Thanjavur offering hair, skin, spa & bridal packages. Visit Naturals Arulanthar Nagar today!"
         />
-        <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://naturalsthanjavur.com/images/bridal.jpeg" />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://naturals-thanjavur.in/" />

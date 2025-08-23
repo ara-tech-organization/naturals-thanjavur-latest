@@ -188,7 +188,7 @@ const Services = () => {
         />
         <meta
           property="og:image"
-          content="https://example.com/services-og.jpg"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
         />
         <meta
           property="og:url"
@@ -208,7 +208,7 @@ const Services = () => {
         />
         <meta
           name="twitter:image"
-          content="https://example.com/services-og.jpg"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
         />
 
         {/* Canonical URL */}

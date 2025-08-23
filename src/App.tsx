@@ -25,12 +25,12 @@ const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
       once: false,
       mirror: true,
-      offset: 100
+      offset: 100,
     });
-    
+
     // Refresh AOS on route change
     AOS.refresh();
   }, []);
@@ -41,21 +41,21 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter basename="/">
-        <ScrollToTop/>
+          <ScrollToTop />
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-1">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/contact" element={<Contact />} />
-                {/* <Route path="/location" element={<Location />} /> */}
-                <Route path="/bridal-packages" element={<BridalPackages />} />
-                <Route path="/pricing" element={<Pricing />} />
-                <Route path="/membership" element={<Membership />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/contact" element={<Contact />} />
+                  {/* <Route path="/location" element={<Location />} /> */}
+                  <Route path="/bridal-packages" element={<BridalPackages />} />
+                  <Route path="/pricing" element={<Pricing />} />
+                  <Route path="/membership" element={<Membership />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
             </main>
             <Footer />
           </div>

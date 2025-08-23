@@ -176,7 +176,7 @@ const Membership = () => {
         />
         <meta
           property="og:image"
-          content="https://example.com/membership-og.jpg"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
         />
         <meta
           property="og:url"

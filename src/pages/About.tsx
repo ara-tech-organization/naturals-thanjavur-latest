@@ -100,7 +100,7 @@ const About = () => {
           property="og:description"
           content="Discover the journey of Naturals Arulanthar Nagar, a premium beauty and bridal salon in Thanjavur with over a decade of excellence."
         />
-        <meta property="og:image" content="https://example.com/about-og.jpg" />
+        <meta property="og:image" content="https://naturalsthanjavur.com/images/bridal.jpeg" />
         <meta property="og:url" content="https://naturals-thanjavur.in/about" />
         <meta property="og:type" content="website" />
 
@@ -114,7 +114,7 @@ const About = () => {
           name="twitter:description"
           content="Naturals Arulanthar Nagar is Thanjavur’s leading salon for bridal, hair, skin and bridal services. Trusted since 2009."
         />
-        <meta name="twitter:image" content="https://example.com/about-og.jpg" />
+        <meta name="twitter:image" content="https://naturalsthanjavur.com/images/bridal.jpeg" />
 
         {/* Canonical */}
         <link rel="canonical" href="https://naturals-thanjavur.in/about" />

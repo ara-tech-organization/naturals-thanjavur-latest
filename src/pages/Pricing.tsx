@@ -909,8 +909,8 @@ const Pricing = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>
-          Service Pricing – Naturals Arulanthar Nagar | Affordable Beauty 
-          in Thanjavur
+          Service Pricing – Naturals Arulanthar Nagar | Affordable Beauty in
+          Thanjavur
         </title>
         <meta
           name="description"
@@ -930,7 +930,7 @@ const Pricing = () => {
         />
         <meta
           property="og:image"
-          content="https://example.com/pricing-og.jpg"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
         />
         <meta
           property="og:url"
@@ -962,8 +962,8 @@ const Pricing = () => {
             Service Pricing
           </h1>
           <p className="text-xl max-w-2xl mx-auto">
-            Get clear, competitive prices for premium salon, bodycare, and beauty
-            services in Thanjavur.
+            Get clear, competitive prices for premium salon, bodycare, and
+            beauty services in Thanjavur.
           </p>
         </div>
       </section>
@@ -1122,7 +1122,7 @@ const Pricing = () => {
                               )}
                             </div>
                           </TableCell>
-                         {/* <TableCell className="text-gray-600">
+                          {/* <TableCell className="text-gray-600">
                             {service.duration}
                           </TableCell> */}
                           <TableCell className="text-purple-600 font-semibold text-base">

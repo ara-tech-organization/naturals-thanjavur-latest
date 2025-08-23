@@ -124,7 +124,7 @@ const BridalPackages = () => {
           property="og:description"
           content="Explore premium bridal makeup packages at Naturals Thanjavur. We specialize in airbrush makeup, saree draping, mehendi, and pre-bridal care."
         />
-        <meta property="og:image" content="https://example.com/bridal-og.jpg" />
+        <meta property="og:image" content="https://naturalsthanjavur.com/images/bridal.jpeg" />
         <meta
           property="og:url"
           content="https://naturals-thanjavur.in/bridal-packages"
@@ -143,7 +143,7 @@ const BridalPackages = () => {
         />
         <meta
           name="twitter:image"
-          content="https://example.com/bridal-og.jpg"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
         />
 
         {/* Canonical */}

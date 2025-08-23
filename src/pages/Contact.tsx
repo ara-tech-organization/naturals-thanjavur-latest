@@ -179,7 +179,7 @@ const handleSubmit = async (e) => {
         />
         <meta
           property="og:image"
-          content="https://example.com/contact-og.jpg"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
         />
         <meta
           property="og:url"
@@ -195,7 +195,7 @@ const handleSubmit = async (e) => {
         />
         <link rel="canonical" href="https://naturals-thanjavur.in/contact" />
       </Helmet>
-        <ToastContainer />
+      <ToastContainer />
       {/* Hero Section */}
       <section
         className="relative h-screen bg-cover bg-center bg-no-repeat"
@@ -358,8 +358,6 @@ const handleSubmit = async (e) => {
                     Send Message
                   </Button>
                 </form>
-
-            
               </Card>
             </div>
 
