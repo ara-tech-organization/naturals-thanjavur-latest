@@ -20,7 +20,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const Contact = () => {
   useEffect(() => {
     AOS.init({
@@ -49,58 +48,149 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-  const payload = {
-    FullName: formData.name.trim(),
-    Email: formData.email.trim(),
-    PhoneNumber: formData.phone.trim(),
-    Service: formData.service.trim(),
-    Message: formData.message.trim(),
+  //   const payload = {
+  //     FullName: formData.name.trim(),
+  //     Email: formData.email.trim(),
+  //     PhoneNumber: formData.phone.trim(),
+  //     Service: formData.service.trim(),
+  //     Message: formData.message.trim(),
+  //   };
+
+  //   if (!payload.FullName || !payload.Email || !payload.PhoneNumber || !payload.Service || !payload.Message) {
+  //     toast.error("Please fill in all fields!", { position: "top-center" });
+  //     return;
+  //   }
+
+  //   try {
+  //     const response = await axios.post(
+  //       "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/NaturalsEnquiry02",
+  //       payload,
+  //       {
+  //         headers: {
+  //           Authorization: "Bearer 123",
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+
+  //     if (response.data && !response.data.error) {
+  //       toast.success("Email sent Successfully!", {
+  //   position: "top-center",
+  //   style: {
+  //     fontFamily: "Poppins, sans-serif",
+  //     fontSize: "1rem",
+  //     fontWeight: 500,
+  //   },
+  // });
+
+  // // ✅ Log the full response or your custom message
+  //   console.log("✅ Success:", response.data);
+
+  //       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+  //     } else {
+  //       toast.error(response.data.message || "Submission failed", { position: "top-center" });
+  //     }
+  //   } catch (error) {
+  //     toast.error("An error occurred. Please try again.", { position: "top-center",style:{fontFamily: "Poppins, sans-serif"} });
+  //     console.error("Submission error:", error);
+  //   }
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      FullName: formData.name.trim(),
+      Email: formData.email.trim(),
+      PhoneNumber: formData.phone.trim(),
+      Service: formData.service.trim(),
+      Message: formData.message.trim(),
+    };
+
+    if (
+      !payload.FullName ||
+      !payload.Email ||
+      !payload.PhoneNumber ||
+      !payload.Service ||
+      !payload.Message
+    ) {
+      toast.error("Please fill in all fields!", { position: "top-center" });
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/NaturalsEnquiry02",
+        payload,
+        {
+          headers: {
+            Authorization: "Bearer 123",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.data && !response.data.error) {
+        toast.success("Email sent Successfully!", {
+          position: "top-center",
+          style: {
+            fontFamily: "Poppins, sans-serif",
+            fontSize: "1rem",
+            fontWeight: 500,
+          },
+        });
+
+        console.log("✅ Success:", response.data);
+
+        // ✅ Trigger Google Ads conversion tracking
+        if (typeof gtag !== "undefined") {
+          gtag_report_conversion("https://naturalsthanjavur.com/contact");
+          console.log("✅ Google Ads conversion tracking triggered.");
+        } else {
+          console.warn("⚠️ gtag is not defined. Conversion tracking skipped.");
+        }
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        toast.error(response.data.message || "Submission failed", {
+          position: "top-center",
+        });
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.", {
+        position: "top-center",
+        style: { fontFamily: "Poppins, sans-serif" },
+      });
+      console.error("Submission error:", error);
+    }
   };
 
-  if (!payload.FullName || !payload.Email || !payload.PhoneNumber || !payload.Service || !payload.Message) {
-    toast.error("Please fill in all fields!", { position: "top-center" });
-    return;
-  }
-
-  try {
-    const response = await axios.post(
-      "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/NaturalsEnquiry02",
-      payload,
-      {
-        headers: {
-          Authorization: "Bearer 123",
-          "Content-Type": "application/json",
-        },
+  // Google Ads conversion tracking function
+  function gtag_report_conversion(url) {
+    const callback = function () {
+      if (url && typeof url !== "undefined") {
+        window.location = url;
       }
-    );
+    };
 
-    if (response.data && !response.data.error) {
-      toast.success("Email sent Successfully!", {
-  position: "top-center",
-  style: {
-    fontFamily: "Poppins, sans-serif",
-    fontSize: "1rem",
-    fontWeight: 500,
-  },
-});
+    gtag("event", "conversion", {
+      send_to: "AW-11437201054/sZp1CIvG4pQbEJ6t180q",
+      value: 1.0,
+      currency: "INR",
+      event_callback: callback,
+    });
 
-// ✅ Log the full response or your custom message
-  console.log("✅ Success:", response.data);
-  
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-    } else {
-      toast.error(response.data.message || "Submission failed", { position: "top-center" });
-    }
-  } catch (error) {
-    toast.error("An error occurred. Please try again.", { position: "top-center",style:{fontFamily: "Poppins, sans-serif"} });
-    console.error("Submission error:", error);
+    return false;
   }
-};
-
-
   const contactInfo = [
     {
       icon: Phone,
@@ -218,7 +308,7 @@ const handleSubmit = async (e) => {
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 font-semibold px-8 py-3"
             >
-              Contact Us Now
+              <a href="#contact-form">Contact Us Now</a>
             </Button>
           </div>
         </div>
@@ -262,7 +352,7 @@ const handleSubmit = async (e) => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50" id="contact-form">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}

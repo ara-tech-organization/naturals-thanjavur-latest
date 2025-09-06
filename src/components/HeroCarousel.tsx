@@ -79,7 +79,10 @@ const HeroCarousel = () => {
                     {slide.subtitle}
                   </p>
                   <Button size="lg" className="bg-white text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3">
+                    <a href="/contact">
+
                     Book Appointment
+                    </a>
                   </Button>
                 </div>
               </div>
