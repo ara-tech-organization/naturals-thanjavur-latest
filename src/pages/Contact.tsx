@@ -42,6 +42,7 @@ const Contact = () => {
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -122,6 +123,7 @@ const Contact = () => {
     }
 
     try {
+      setIsLoading(true);
       const response = await axios.post(
         "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/NaturalsEnquiry02",
         payload,
@@ -171,6 +173,8 @@ const Contact = () => {
         style: { fontFamily: "Poppins, sans-serif" },
       });
       console.error("Submission error:", error);
+    } finally {
+      setIsLoading(false); // ✅ Stop loader
     }
   };
 
@@ -440,9 +444,35 @@ const Contact = () => {
 
                   <Button
                     type="submit"
-                    className="w-full gradient-bg text-white hover:opacity-90 py-3"
+                    disabled={isLoading}
+                    className={`w-full gradient-bg text-white hover:opacity-90 py-3 flex items-center justify-center ${
+                      isLoading ? "opacity-70 cursor-not-allowed" : ""
+                    }`}
                   >
-                    Send Message
+                    {isLoading ? (
+                      <svg
+                        className="animate-spin h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8H4z"
+                        ></path>
+                      </svg>
+                    ) : (
+                      "Send Message"
+                    )}
                   </Button>
                 </form>
               </Card>
