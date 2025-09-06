@@ -147,7 +147,7 @@ const Contact = () => {
 
         // ✅ Trigger Google Ads conversion tracking
         if (typeof gtag !== "undefined") {
-          gtag_report_conversion("https://naturalsthanjavur.com/contact");
+          gtag_report_conversion("/");
           console.log("✅ Google Ads conversion tracking triggered.");
         } else {
           console.warn("⚠️ gtag is not defined. Conversion tracking skipped.");
@@ -174,23 +174,20 @@ const Contact = () => {
     }
   };
 
-  // Google Ads conversion tracking function
+  // ✅ Updated Google Ads conversion tracking function
   function gtag_report_conversion(url) {
-    const callback = function () {
-      if (url && typeof url !== "undefined") {
+    var callback = function () {
+      if (typeof url != "undefined") {
         window.location = url;
       }
     };
-
     gtag("event", "conversion", {
       send_to: "AW-11437201054/sZp1CIvG4pQbEJ6t180q",
-      value: 1.0,
-      currency: "INR",
       event_callback: callback,
     });
-
     return false;
   }
+
   const contactInfo = [
     {
       icon: Phone,

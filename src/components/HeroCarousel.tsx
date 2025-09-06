@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -62,7 +63,7 @@ const HeroCarousel = () => {
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
+              index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
             <div
@@ -78,12 +79,16 @@ const HeroCarousel = () => {
                   <p className="text-xl md:text-2xl mb-8 text-purple-100">
                     {slide.subtitle}
                   </p>
-                  <Button size="lg" className="bg-white text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3">
-                    <a href="/contact">
-
-                    Book Appointment
-                    </a>
+                  <Link to="/contact">
+                  <Button
+                    size="lg"
+                    className="bg-white text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3"
+                    >
+                    
+                      Book Appointment
+                   
                   </Button>
+                    </Link>
                 </div>
               </div>
             </div>
@@ -113,8 +118,8 @@ const HeroCarousel = () => {
             onClick={() => goToSlide(index)}
             className={`w-4 h-4 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'bg-white scale-125'
-                : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                ? "bg-white scale-125"
+                : "bg-white bg-opacity-50 hover:bg-opacity-75"
             }`}
           />
         ))}
