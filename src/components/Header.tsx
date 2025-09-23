@@ -1,21 +1,36 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showServicesSubmenu, setShowServicesSubmenu] = useState(false);
-  const [showPlansSubmenu, setShowPlansSubmenu] = useState(false);
-  const location = useLocation();
 
+  // Mobile submenu states
+  const [showServicesMobile, setShowServicesMobile] = useState(false);
+  const [showPlansMobile, setShowPlansMobile] = useState(false);
+
+  // Desktop submenu states (controlled with mouse enter/leave + click)
+  const [showServicesDesktop, setShowServicesDesktop] = useState(false);
+  const [showPlansDesktop, setShowPlansDesktop] = useState(false);
+
+  const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
 
   const handleNavClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setIsMenuOpen(false);
-    setShowServicesSubmenu(false);
-    setShowPlansSubmenu(false);
+    setShowServicesMobile(false);
+    setShowPlansMobile(false);
+    setShowServicesDesktop(false);
+    setShowPlansDesktop(false);
+  };
+
+  // allow Esc to close open desktop dropdowns
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setShowServicesDesktop(false);
+      setShowPlansDesktop(false);
+    }
   };
 
   return (
@@ -40,7 +55,10 @@ const Header = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="font-forum container mx-auto px-4 py-4 bg-white relative font-bold">
+      <nav
+        className="font-forum container mx-auto px-4 py-4 bg-white relative font-bold"
+        onKeyDown={handleKeyDown}
+      >
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" onClick={handleNavClick}>
@@ -73,9 +91,16 @@ const Header = () => {
               About
             </Link>
 
-            {/* Services Dropdown */}
-            <div className="relative group">
+            {/* Services Dropdown (desktop) */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowServicesDesktop(true)}
+              onMouseLeave={() => setShowServicesDesktop(false)}
+            >
               <button
+                aria-haspopup="true"
+                aria-expanded={showServicesDesktop}
+                onClick={() => setShowServicesDesktop((s) => !s)}
                 className={`flex items-center focus:outline-none hover:text-[#7f4899] ${
                   location.pathname.startsWith("/services") ||
                   location.pathname === "/bridal-packages"
@@ -85,7 +110,15 @@ const Header = () => {
               >
                 Services <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute top-full left-0 mt-2 bg-white text-[#7f4899] shadow-lg rounded-md py-2 hidden group-hover:block z-20 min-w-[180px]">
+
+              <div
+                // keep visible while mouse is inside this container too
+                className={`absolute top-full left-0 mt-0 bg-white text-[#7f4899] shadow-lg rounded-md py-2 z-50 min-w-[180px] ${
+                  showServicesDesktop ? "block" : "hidden"
+                }`}
+                onMouseEnter={() => setShowServicesDesktop(true)}
+                onMouseLeave={() => setShowServicesDesktop(false)}
+              >
                 <Link
                   to="/services"
                   onClick={handleNavClick}
@@ -103,9 +136,16 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Plans Dropdown */}
-            <div className="relative group text-[#7f4899]">
+            {/* Plans Dropdown (desktop) */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowPlansDesktop(true)}
+              onMouseLeave={() => setShowPlansDesktop(false)}
+            >
               <button
+                aria-haspopup="true"
+                aria-expanded={showPlansDesktop}
+                onClick={() => setShowPlansDesktop((s) => !s)}
                 className={`flex items-center focus:outline-none hover:text-[#7f4899] ${
                   location.pathname === "/pricing" ||
                   location.pathname === "/membership"
@@ -115,7 +155,14 @@ const Header = () => {
               >
                 Plans <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute top-full left-0 mt-2 bg-white text-[#7f4899] shadow-lg rounded-md py-2 hidden group-hover:block z-20 min-w-[180px]">
+
+              <div
+                className={`absolute top-full left-0 mt-0 bg-white text-[#7f4899] shadow-lg rounded-md py-2 z-50 min-w-[180px] ${
+                  showPlansDesktop ? "block" : "hidden"
+                }`}
+                onMouseEnter={() => setShowPlansDesktop(true)}
+                onMouseLeave={() => setShowPlansDesktop(false)}
+              >
                 <Link
                   to="/pricing"
                   onClick={handleNavClick}
@@ -144,19 +191,12 @@ const Header = () => {
             >
               Contact
             </Link>
-            {/* <Link to="/location" onClick={handleNavClick} className={`font-medium hover:text-white ${isActive('/location') ? 'border-b-2 border-white pb-1' : ''}`}>
-              Location
-            </Link> */}
-
-            {/* <Button className="gradient-bg text-white hover:opacity-90">
-              Book Appointment
-            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden text-[#7f4899]"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen((s) => !s)}
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -179,11 +219,11 @@ const Header = () => {
             {/* Services Submenu Mobile */}
             <button
               className="block py-2 w-full text-left font-bold"
-              onClick={() => setShowServicesSubmenu(!showServicesSubmenu)}
+              onClick={() => setShowServicesMobile((s) => !s)}
             >
               Services
             </button>
-            {showServicesSubmenu && (
+            {showServicesMobile && (
               <div className="pl-4">
                 <Link
                   to="/services"
@@ -205,11 +245,11 @@ const Header = () => {
             {/* Plans Submenu Mobile */}
             <button
               className="block py-2 w-full text-left font-bold"
-              onClick={() => setShowPlansSubmenu(!showPlansSubmenu)}
+              onClick={() => setShowPlansMobile((s) => !s)}
             >
               Plans
             </button>
-            {showPlansSubmenu && (
+            {showPlansMobile && (
               <div className="pl-4">
                 <Link
                   to="/pricing"
@@ -231,11 +271,6 @@ const Header = () => {
             <Link to="/contact" className="block py-2" onClick={handleNavClick}>
               Contact
             </Link>
-            {/* <Link to="/location" className="block py-2" onClick={handleNavClick}>Location</Link> */}
-
-            {/* <Button className="w-full mt-4 gradient-bg text-white">
-              Book Appointment
-            </Button> */}
           </div>
         )}
       </nav>
