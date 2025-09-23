@@ -18,6 +18,7 @@ import BridalPackages from "./pages/BridalPackages";
 import Pricing from "./pages/Pricing";
 import Membership from "./pages/Membership";
 import ScrollToTop from "./components/ui/scrolltop";
+import ThankYou from "./pages/ThankYou";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => {
                   <Route path="/bridal-packages" element={<BridalPackages />} />
                   <Route path="/pricing" element={<Pricing />} />
                   <Route path="/membership" element={<Membership />} />
+                  <Route path="/thank-you" element={<ThankYou />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>

@@ -49,57 +49,6 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const payload = {
-  //     FullName: formData.name.trim(),
-  //     Email: formData.email.trim(),
-  //     PhoneNumber: formData.phone.trim(),
-  //     Service: formData.service.trim(),
-  //     Message: formData.message.trim(),
-  //   };
-
-  //   if (!payload.FullName || !payload.Email || !payload.PhoneNumber || !payload.Service || !payload.Message) {
-  //     toast.error("Please fill in all fields!", { position: "top-center" });
-  //     return;
-  //   }
-
-  //   try {
-  //     const response = await axios.post(
-  //       "https://schoolcommunication-gmdtekepd3g3ffb9.canadacentral-01.azurewebsites.net/api/postMSMSForm/NaturalsEnquiry02",
-  //       payload,
-  //       {
-  //         headers: {
-  //           Authorization: "Bearer 123",
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-
-  //     if (response.data && !response.data.error) {
-  //       toast.success("Email sent Successfully!", {
-  //   position: "top-center",
-  //   style: {
-  //     fontFamily: "Poppins, sans-serif",
-  //     fontSize: "1rem",
-  //     fontWeight: 500,
-  //   },
-  // });
-
-  // // ✅ Log the full response or your custom message
-  //   console.log("✅ Success:", response.data);
-
-  //       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-  //     } else {
-  //       toast.error(response.data.message || "Submission failed", { position: "top-center" });
-  //     }
-  //   } catch (error) {
-  //     toast.error("An error occurred. Please try again.", { position: "top-center",style:{fontFamily: "Poppins, sans-serif"} });
-  //     console.error("Submission error:", error);
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -149,7 +98,7 @@ const Contact = () => {
 
         // ✅ Trigger Google Ads conversion tracking
         if (typeof gtag !== "undefined") {
-          gtag_report_conversion("/");
+          gtag_report_conversion("/thank-you");
           console.log("✅ Google Ads conversion tracking triggered.");
         } else {
           console.warn("⚠️ gtag is not defined. Conversion tracking skipped.");
