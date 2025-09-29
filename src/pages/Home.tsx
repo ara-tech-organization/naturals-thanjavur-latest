@@ -107,13 +107,12 @@ const services = [
   ];
 
   return (
-
     <div className="min-h-screen">
       <Helmet>
-        <title>Naturals Salon Arulanthar Nagar | Best Beauty & Bridal Services in Thanjavur</title>
+        <title>Naturals Salon – Thanjavur</title>
         <meta
           name="description"
-          content="Naturals Arulanthar Nagar is Thanjavur’s trusted salon for premium hair, skin, spa, and bridal services. Book appointments for luxury beauty treatments today!"
+          content="Step into a world of style and self-care at Naturals Thanjavur. From trendy haircuts and facials to bridal makeovers, our experts help you look and feel your best every day. ✨"
         />
         <meta
           name="keywords"
@@ -123,23 +122,32 @@ const services = [
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="Naturals Salon Arulanthar Nagar – Thanjavur's Premium Beauty Destination" />
+        <meta property="og:title" content="Naturals Salon – Thanjavur" />
         <meta
           property="og:description"
-          content="Discover luxurious beauty and bridal services at Naturals Arulanthar Nagar. Trusted by 10,000+ happy clients in Thanjavur."
+          content="Step into a world of style and self-care at Naturals Thanjavur. From trendy haircuts and facials to bridal makeovers, our experts help you look and feel your best every day. ✨"
         />
-        <meta property="og:image" content="https://naturalsthanjavur.com/images/bridal.jpeg" />
+        <meta
+          property="og:image"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
+        />
         <meta property="og:url" content="https://naturals-thanjavur.in/" />
         <meta property="og:type" content="website" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Naturals Salon Arulanthar Nagar – Best in Thanjavur" />
+        <meta
+          name="twitter:title"
+          content="Naturals Salon Arulanthar Nagar – Best in Thanjavur"
+        />
         <meta
           name="twitter:description"
-          content="Premium salon in Thanjavur offering hair, skin, spa & bridal packages. Visit Naturals Arulanthar Nagar today!"
+          content="Step into a world of style and self-care at Naturals Thanjavur. From trendy haircuts and facials to bridal makeovers, our experts help you look and feel your best every day. ✨"
         />
-        <meta name="twitter:image" content="https://naturalsthanjavur.com/images/bridal.jpeg" />
+        <meta
+          name="twitter:image"
+          content="https://naturalsthanjavur.com/images/bridal.jpeg"
+        />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://naturals-thanjavur.in/" />
@@ -150,11 +158,13 @@ const services = [
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="font-forum text-5xl font-bold text-gray-900 mb-6">Welcome to Naturals Thanjavur</h2>
+            <h2 className="font-forum text-5xl font-bold text-gray-900 mb-6">
+              Welcome to Naturals Thanjavur
+            </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Experience the finest in hair care, skincare, and bridal beauty at Thanjavur’s premier salon.
-              With over 15 years of expertise, we're your trusted partner
-              in looking and feeling your absolute best.
+              Experience the finest in hair care, skincare, and bridal beauty at
+              Thanjavur’s premier salon. With over 15 years of expertise, we're
+              your trusted partner in looking and feeling your absolute best.
             </p>
           </div>
 
@@ -172,7 +182,9 @@ const services = [
 
                 {/* Centered Text */}
                 <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                  <h3 className="font-forum text-2xl font-bold text-white mb-3">{service.name}</h3>
+                  <h3 className="font-forum text-2xl font-bold text-white mb-3">
+                    {service.name}
+                  </h3>
                   <p className="text-white text-sm">{service.desc}</p>
                 </div>
               </div>
@@ -185,7 +197,6 @@ const services = [
       <section className="bg-gradient-to-r from-[#7f4899] to-[#b388c1] text-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-stretch">
-
             {/* Left Image - No bottom gap */}
             <div className="flex items-stretch" data-aos="fade-right">
               <img
@@ -197,7 +208,10 @@ const services = [
 
             {/* Right Content */}
             <div className="flex flex-col justify-center">
-              <div className="mb-12 text-center md:text-left" data-aos="fade-up">
+              <div
+                className="mb-12 text-center md:text-left"
+                data-aos="fade-up"
+              >
                 <h2 className="font-forum text-4xl font-bold mb-4">
                   Our Success in Numbers
                 </h2>
@@ -228,11 +242,13 @@ const services = [
                             start={0}
                             end={stat.number}
                             duration={2}
-                            suffix={stat.suffix || ''}
+                            suffix={stat.suffix || ""}
                           />
                         )}
                       </div>
-                      <div className="text-lg text-purple-100">{stat.label}</div>
+                      <div className="text-lg text-purple-100">
+                        {stat.label}
+                      </div>
                     </div>
                   );
                 })}
@@ -246,7 +262,9 @@ const services = [
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="font-forum text-4xl font-bold text-gray-900 mb-6">Our Premium Services</h2>
+            <h2 className="font-forum text-4xl font-bold text-gray-900 mb-6">
+              Our Premium Services
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our comprehensive range of beauty and bridal services
             </p>
@@ -256,22 +274,32 @@ const services = [
             {[
               {
                 title: "Women's Beauty Services",
-                image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                services: ["Hair Care & Styling", "Bridal Packages", "Facial Services"],
-                color: "from-purple-500 to-pink-500"
+                image:
+                  "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                services: [
+                  "Hair Care & Styling",
+                  "Bridal Packages",
+                  "Facial Services",
+                ],
+                color: "from-purple-500 to-pink-500",
               },
               {
                 title: "Men's Grooming Services",
                 image: "./images/mens_grooming.jpeg",
-                services: ["Haircut & Styling", "Beard Grooming", "Facial Care"],
-                color: "from-blue-500 to-indigo-500"
+                services: [
+                  "Haircut & Styling",
+                  "Beard Grooming",
+                  "Facial Care",
+                ],
+                color: "from-blue-500 to-indigo-500",
               },
               {
                 title: "Special Packages",
-                image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image:
+                  "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                 services: ["Bridal Bliss", "Glow Up Package", "Family Care"],
-                color: "from-green-500 to-teal-500"
-              }
+                color: "from-green-500 to-teal-500",
+              },
             ].map((category, index) => (
               <Card
                 key={index}
@@ -283,16 +311,23 @@ const services = [
                   className="h-64 bg-cover bg-center relative"
                   style={{ backgroundImage: `url(${category.image})` }}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-t ${category.color} opacity-80`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t ${category.color} opacity-80`}
+                  ></div>
                   <div className="absolute inset-0 flex items-end p-6">
-                    <h3 className="font-forum text-2xl font-bold text-white">{category.title}</h3>
+                    <h3 className="font-forum text-2xl font-bold text-white">
+                      {category.title}
+                    </h3>
                   </div>
                 </div>
 
                 <div className="p-6">
                   <ul className="space-y-2 mb-6">
                     {category.services.map((service, serviceIndex) => (
-                      <li key={serviceIndex} className="flex items-center text-gray-600">
+                      <li
+                        key={serviceIndex}
+                        className="flex items-center text-gray-600"
+                      >
                         <ChevronRight className="h-4 w-4 text-primary mr-2" />
                         {service}
                       </li>
@@ -303,12 +338,9 @@ const services = [
                     className="w-full"
                     onClick={() => window.scrollTo(0, 0)}
                   >
-                    <Button
-                      className="w-full gradient-bg text-white hover:bg-gradient-to-br hover:from-[#6d3d88] hover:to-[#5c2e70] transition-colors duration-300"
-                    >
+                    <Button className="w-full gradient-bg text-white hover:bg-gradient-to-br hover:from-[#6d3d88] hover:to-[#5c2e70] transition-colors duration-300">
                       View Services
                     </Button>
-
                   </Link>
                 </div>
               </Card>
@@ -325,7 +357,10 @@ const services = [
         }}
       >
         <div className="py-16 px-4 md:px-8 relative z-10">
-          <div className="container mx-auto text-center mb-12" data-aos="fade-up">
+          <div
+            className="container mx-auto text-center mb-12"
+            data-aos="fade-up"
+          >
             <h2 className="font-forum text-4xl font-bold text-white mb-4">
               What Our Customers Say
             </h2>
@@ -368,7 +403,9 @@ const services = [
                       <h3 className="font-forum text-xl text-[#7f4899] font-semibold">
                         {testimonial.name}
                       </h3>
-                      <p className="text-sm text-purple-700">{testimonial.service}</p>
+                      <p className="text-sm text-purple-700">
+                        {testimonial.service}
+                      </p>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -377,18 +414,19 @@ const services = [
 
             {/* Conditional Arrows */}
             <button
-              className={`custom-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-[#7f4899] hover:bg-[#6d3a85] text-white p-3 rounded-full shadow-lg transition-opacity ${isAtStart ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                }`}
+              className={`custom-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-[#7f4899] hover:bg-[#6d3a85] text-white p-3 rounded-full shadow-lg transition-opacity ${
+                isAtStart ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
-              className={`custom-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-[#7f4899] hover:bg-[#6d3a85] text-white p-3 rounded-full shadow-lg transition-opacity ${isAtEnd ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                }`}
+              className={`custom-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-[#7f4899] hover:bg-[#6d3a85] text-white p-3 rounded-full shadow-lg transition-opacity ${
+                isAtEnd ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
             >
               <ChevronRight className="w-6 h-6" />
             </button>
-
           </div>
         </div>
       </section>
@@ -397,7 +435,9 @@ const services = [
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="font-forum text-4xl font-bold text-gray-900 mb-6">Visit Our Main Branch</h2>
+            <h2 className="font-forum text-4xl font-bold text-gray-900 mb-6">
+              Visit Our Main Branch
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Conveniently located at Arulanthar Nagar, Thanjavur.
             </p>
@@ -413,11 +453,16 @@ const services = [
                 <MapPin className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-forum text-xl font-bold text-gray-900">Naturals</h3>
+                <h3 className="font-forum text-xl font-bold text-gray-900">
+                  Naturals
+                </h3>
                 <p className="text-gray-600">Arulanthar Nagar</p>
               </div>
             </div>
-            <p className="text-gray-600 mb-4">1st Floor, Philomena Shop, 2851/14, No 2, opposite Vinodhagan Hospital, Arulanthar Nagar, Thanjavur, Tamil Nadu 613007</p>
+            <p className="text-gray-600 mb-4">
+              1st Floor, Philomena Shop, 2851/14, No 2, opposite Vinodhagan
+              Hospital, Arulanthar Nagar, Thanjavur, Tamil Nadu 613007
+            </p>
             {/* <Button size="sm" className="gradient-bg text-white hover:opacity-90">
               Get Directions
             </Button> */}
@@ -442,15 +487,19 @@ const services = [
         <div className="absolute inset-0 " />
 
         <div className="relative container mx-auto px-6 md:px-12 z-10">
-          <div className="grid md:grid-cols-2 items-center gap-12" data-aos="fade-up">
-
+          <div
+            className="grid md:grid-cols-2 items-center gap-12"
+            data-aos="fade-up"
+          >
             {/* Left Content */}
             <div className="text-center md:text-left space-y-6">
               <h2 className="font-forum text-5xl font-bold leading-tight">
                 Ready to Transform Your Look?
               </h2>
               <p className="text-xl text-[#f4e3ff] max-w-xl">
-                Discover the best in hair, skin, and bridal beauty at Naturals Thanjavur. Book your appointment and experience the most loved salon in the city.
+                Discover the best in hair, skin, and bridal beauty at Naturals
+                Thanjavur. Book your appointment and experience the most loved
+                salon in the city.
               </p>
               {/* <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start">
                 <Button
